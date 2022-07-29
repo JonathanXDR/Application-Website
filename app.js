@@ -89,6 +89,9 @@ function themeSettings() {
     }, 1);
   });
 }
+
+/* ------------------------------- Easter Eggs ------------------------------ */
+
 /* -------------------------- IntersectionObserver -------------------------- */
 
 function intersectionObserver() {

@@ -751,6 +751,35 @@ a:link:hover {
   opacity: 0.6;
 }
 
+/* ------------------------------- Easter Eggs ------------------------------ */
+
+.mario-msg {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 9999;
+  transform: translate3d(-50%, -50%, 0) scale(0);
+  transform-origin: 50% 50%;
+  width: 40rem;
+  height: 30rem;
+  padding: 2rem;
+  max-width: 70vw;
+  max-height: 70vh;
+  background: #000;
+  color: #fff;
+  font-family: 'Super Mario World Text Box', sans-serif;
+  font-size: 2rem;
+  text-align: center;
+  letter-spacing: 2px;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
 /* ---------------------------------- Logo ---------------------------------- */
 
 .aD6z1nYkhcolor {
