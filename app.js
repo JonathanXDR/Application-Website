@@ -92,6 +92,29 @@ function themeSettings() {
 
 /* ------------------------------- Easter Eggs ------------------------------ */
 
+let egg = new Egg();
+egg
+  .addCode('up,up,down,down,left,right,left,right,b,a', function () {
+    jQuery('#egggif').fadeIn(500, function () {
+      window.setTimeout(function () {
+        jQuery('#egggif').hide();
+      }, 5000);
+    });
+  })
+  .addCode('n,i,c,k', function () {
+    console.log('Nick Zimmermann');
+  })
+  .addCode('j,o,n,a,s', function () {
+    console.log('Jonas Marschall');
+  })
+  .addCode('a,w,e,s,o,m,e', function () {
+    console.log('Awesome');
+  })
+  .addHook(function () {
+    console.log('This is message is called if any easter egg is found!');
+  })
+  .listen();
+
 /* -------------------------- IntersectionObserver -------------------------- */
 
 function intersectionObserver() {
