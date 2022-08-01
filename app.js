@@ -1,15 +1,15 @@
 window.onload = function () {
-  themeSettings();
+  // themeSettings();
   calcProgress();
   timelineScrolling();
   age();
   trainingYear();
   currentYear();
   intersectionObserver();
-  betaConfig();
-  currentItem();
-  openNav();
-  closeNav();
+  // betaConfig();
+  // currentItem();
+  // openNav();
+  // closeNav();
   expandTile();
 };
 
