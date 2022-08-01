@@ -161,6 +161,8 @@ body {
   --color-tile-button: rgba(255, 255, 255, 0.8);
 
   /* Special Colors */
+  --color-dropdown-dark-background: hsla(0, 0%, 100%, 0.1);
+  --color-dropdown-dark-border: rgba(210, 210, 215, 0.2);
   --color-sub-text: #aaa;
   --color-tutorials-overview-background: radial-gradient(
     circle at center 70%,
@@ -280,7 +282,7 @@ body {
 }
 
 .section-separated:not(#about) {
-  border-top: 1px solid #d2d2d7;
+  border-top: 1px solid var(--color-fill-gray-tertiary);
 }
 
 .typography-headline + .intro,
@@ -499,20 +501,36 @@ li {
 }
 
 .link {
-  color: var(--ribbon-link-color);
-  letter-spacing: inherit;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: -moz-box;
+  color: var(--ribbon-link-color) !important;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  -webkit-align-items: center;
-  -moz-box-align: center;
   align-items: center;
-  gap: 0.3em;
   white-space: nowrap;
+}
+
+.icon-chevron,
+.icon-download {
+  margin-left: 0.3em;
+  display: inline-block;
+  vertical-align: middle;
+  fill: currentColor;
+  transform: scale(1);
+  -webkit-transform: scale(1);
+  overflow: visible;
+}
+
+.icon-chevron {
+  width: 1.2em !important;
+  height: 1.2em !important;
+}
+
+.icon-globe {
+  width: 1.5em !important;
+  height: 1.5em !important;
+}
+
+.icon-download {
+  width: 1em !important;
+  height: 1em !important;
 }
 
 .link:link,
@@ -609,21 +627,6 @@ a:link:hover {
   .ribbon-content {
     font-size: 14px !important;
   }
-
-  .icon-chevron {
-    width: 14px;
-    height: 14px;
-  }
-
-  .ribbon .icon-chevron {
-    width: 12px !important;
-    height: 12px !important;
-  }
-
-  .icon-download {
-    width: 22px;
-    height: 22px;
-  }
 }
 
 @media screen and (min-width: 1200px) {
@@ -666,11 +669,6 @@ a:link:hover {
   #about.section-separated {
     padding: 4em 0 4em 0;
   }
-
-  .info-container .icon-chevron {
-    width: 16px;
-    height: 16px;
-  }
 }
 
 /* ----------------------------------- VHS ---------------------------------- */
@@ -685,7 +683,7 @@ a:link:hover {
   left: 0;
   right: 0;
   bottom: 0;
-  background: url(img/lines.jpg);
+  background: url(media/img/lines.jpg);
   z-index: 10;
   -webkit-background-size: 7px auto;
   -moz-background-size: 7px auto;
@@ -740,7 +738,7 @@ a:link:hover {
   left: 0;
   right: 0;
   bottom: 0;
-  background: url(img/vignette.png);
+  background: url(media/img/vignette.png);
   z-index: 11;
   -webkit-background-size: 100% 100%;
   -moz-background-size: 100% 100%;
@@ -818,35 +816,10 @@ a:link:hover {
   transition: fill 0.5s cubic-bezier(0.28, 0.11, 0.32, 1);
 }
 
-/* ------------------------------ Beta Badge #1 ----------------------------- */
-
-.badge[data-v-0eda6c4a] {
-  font-size: 0.70588rem;
-  line-height: 1.33337;
-  font-weight: 400;
-  letter-spacing: -0.01em;
-  font-family: SF Pro Text, system-ui, -apple-system, BlinkMacSystemFont,
-    Helvetica Neue, Helvetica, Arial, sans-serif;
-  display: inline-block;
-  padding: 2px 10px;
-  white-space: nowrap;
-  background: none;
-  border-radius: 18px;
-  margin-left: 10px;
-  /* border: 1px solid var(--color-figure-teal); */
-  border: 1px solid var(--color-figure-orange);
-  /* color: var(--color-figure-teal); */
-  color: var(--color-figure-orange);
-  -webkit-transition: color 0.5s cubic-bezier(0.28, 0.11, 0.32, 1);
-  -o-transition: color 0.5s cubic-bezier(0.28, 0.11, 0.32, 1);
-  -moz-transition: color 0.5s cubic-bezier(0.28, 0.11, 0.32, 1);
-  transition: color 0.5s cubic-bezier(0.28, 0.11, 0.32, 1);
-}
-
-/* ------------------------------ Beta Badge #2 ----------------------------- */
+/* ------------------------------- Beta Badge ------------------------------- */
 
 small[data-v-91bcffaa] {
-  font-size: 1.41176rem;
+  font-size: 22.588px;
   line-height: 1.16667;
   font-weight: 600;
   letter-spacing: 0.009em;
@@ -862,7 +835,7 @@ small[data-v-91bcffaa] {
 }
 @media only screen and (max-width: 1250px) {
   small[data-v-91bcffaa] {
-    font-size: 1.23529rem;
+    font-size: 19.765px;
     line-height: 1.19048;
     font-weight: 600;
     letter-spacing: 0.011em;
@@ -1795,165 +1768,89 @@ input[type='checkbox']#active {
 
 /* -------------------------- Prefered Language #1 -------------------------- */
 
-/*! CSS Used from: https://developer.apple.com/assets/styles/global.dist.css?41172203193 */
-:focus {
-  outline: 4px solid rgba(0, 125, 250, 0.6);
-  outline-offset: 1px;
+.svg-icon[data-v-7f60a732] {
+  fill: var(--colors-svg-icon-fill-dark, var(--color-svg-icon));
+  transform: scale(1);
+  -webkit-transform: scale(1);
+  overflow: visible;
 }
-::-moz-focus-inner {
-  border: 0;
-  padding: 0;
-}
-select {
-  font-synthesis: none;
-  -moz-font-feature-settings: 'kern';
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  direction: ltr;
-  text-align: left;
-}
-.icon::before,
-.icon::after {
-  font-family: 'SF Pro Icons';
-  color: inherit;
-  display: inline-block;
-  font-style: normal;
-  font-weight: inherit;
-  font-size: inherit;
-  line-height: 1;
-  text-decoration: underline;
+
+.form-element[data-v-1c6146ea] {
   position: relative;
-  z-index: 1;
-  alt: '';
 }
-.icon::before,
-.icon::after {
-  text-decoration: none;
-}
-.icon::before {
-  display: none;
-}
-.icon-chevrondown::before,
-.icon-chevrondown::after {
-  content: '';
-}
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
-}
-select {
-  background: transparent;
+
+.form-dropdown[data-v-1c6146ea] {
+  color: var(--color-fill-gray);
+  font-size: 1rem;
+  line-height: 1.23536;
+  font-weight: 400;
+  letter-spacing: -0.022em;
+  font-family: SF Pro Text, system-ui, -apple-system, BlinkMacSystemFont,
+    Helvetica Neue, Helvetica, Arial, sans-serif;
+  display: block;
+  box-sizing: border-box;
   width: 100%;
-  height: 34px;
-  padding: 0 1em;
-  font-size: 1em;
-  font-family: inherit;
-  border-radius: 4px;
-  border: none;
-  margin: 0;
-  cursor: pointer;
-}
-select,
-select:focus {
+  height: 3.3em;
+  padding: 1.11765rem 2.35294rem 0 0.94118rem;
+  text-align: left;
+  border: 1px solid var(--color-dropdown-dark-border);
+  border-radius: 15px;
+  background-clip: padding-box;
+  margin-bottom: 0.82353rem;
+  -webkit-appearance: none;
   -moz-appearance: none;
-  -webkit-appearance: none;
   appearance: none;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  min-height: 32px;
+  background-color: var(--color-dropdown-dark-background);
 }
-select:focus {
-  border-color: #0088cc;
-  outline: 0;
-  box-shadow: 0 0 0 3px rgba(0, 136, 204, 0.3);
-  z-index: 9;
+
+.form-dropdown.no-eyebrow[data-v-1c6146ea] {
+  padding-top: 0;
 }
-::-webkit-input-placeholder,
-:-moz-placeholder,
-::-moz-placeholder,
-:-ms-input-placeholder {
-  color: #f5f5f7;
+
+.form-dropdown ~ .form-icon[data-v-1c6146ea] {
+  position: absolute;
+  display: block;
+  pointer-events: none;
+  fill: var(--color-figure-gray-tertiary);
+  right: 14px;
+  width: 13px;
+  height: auto;
+  top: 50%;
+  transform: translateY(-50%);
 }
-/*! CSS Used from: https://developer.apple.com/assets/styles/dark-mode.css?41172203193 */
-html body .dropdown-container select,
-html body .dropdown-container {
-  color: var(--glyph-blue);
+@media only screen and (max-width: 735px) {
+  .form-dropdown ~ .form-icon[data-v-1c6146ea] {
+    right: 14px;
+  }
 }
-html body .dropdown-container select,
-html body .dropdown-container:hover * {
-  color: var(--glyph-blue);
+/* .form-dropdown[data-v-1c6146ea] option {
+  color: var(--color-dropdown-text);
+} */
+
+[data-v-1b2e9918] .form-dropdown {
+  font-size: 0.82353rem;
+  margin-bottom: 0;
+  padding-top: 1px;
+  height: 27px;
+  min-height: unset;
+  max-width: 300px;
 }
-html body.dmf select {
-  color: var(--glyph-gray);
-  background-color: var(--glyph-gray-override);
+@media only screen and (max-width: 1023px) {
+  [data-v-1b2e9918] .form-dropdown {
+    max-width: 250px;
+  }
 }
-html body.dmf .dropdown-container select,
-html body.dmf .dropdown-container:hover * {
-  color: var(--glyph-blue);
-}
-/*! CSS Used from: https://developer.apple.com/assets/styles/globalnav.css?41172203193 */
-select {
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -moz-font-feature-settings: 'liga', 'kern';
-}
-/*! CSS Used from: https://developer.apple.com/assets/styles/language-dropdown.css?41172203193 */
-.dropdown-container {
-  display: inline;
-  position: relative;
-  float: right;
-  z-index: 2;
-}
+/* [data-v-1b2e9918] .form-dropdown option:not([disabled]) {
+  color: rgba(29, 29, 31, 0.9);
+} */
 @media only screen and (max-width: 767px) {
-  .dropdown-container {
-    padding-top: 12px;
-  }
-}
-.dropdown-container select {
-  color: #0066cc;
-  font-weight: 600;
-  line-height: 1.333333;
-  display: inline;
-  direction: rtl;
-  width: initial;
-  height: initial;
-  padding: 0 0.75rem 0 0;
-  border-radius: 0;
-  -webkit-appearance: none;
-  appearance: none;
-  outline: none;
-}
-@media (max-width: 850px) {
-  .dropdown-container select {
-    direction: ltr;
-  }
-  .dropdown-container select:active {
-    font-size: 16px;
-    transform-origin: top left;
-    transform: scale(0.719);
-  }
-  .dropdown-container select:active + span {
+  .changes-versions[data-v-1b2e9918] {
     display: none;
   }
-}
-.dropdown-container select:active,
-.dropdown-container select:focus {
-  border: none;
-  outline: none;
-}
-.dropdown-container option {
-  direction: ltr;
-}
-.dropdown-container:hover * {
-  text-decoration: underline;
-  color: #000;
-}
-.dropdown-container span {
-  pointer-events: none;
-  position: absolute;
-}
-.dropdown-container .dropdown-icon {
-  right: 0;
-  line-height: 1.3;
 }
 
 /* -------------------------------- Info Bar -------------------------------- */
@@ -1973,7 +1870,14 @@ select {
 }
 
 .article-image {
+  width: 1.25em !important;
+  height: 1.25em !important;
   margin-top: 0.3em !important;
+}
+
+.svg-icon {
+  width: 1.75em !important;
+  height: 1.75em !important;
 }
 
 .ribbon {
@@ -4413,16 +4317,6 @@ select {
     stroke-width: 8px;
   }
 
-  .svg-icon {
-    width: 30px;
-    height: 30px;
-  }
-
-  .article-image {
-    width: 25px;
-    height: 25px;
-  }
-
   .timeline {
     gap: 64px;
   }
@@ -4433,11 +4327,6 @@ select {
 }
 
 @media screen and (min-width: 1200px) {
-  .svg-icon {
-    width: 35px;
-    height: 35px;
-  }
-
   .timeline-wrapper {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -4472,15 +4361,15 @@ select {
 
 /* -------------------------- Prefered Language #2 -------------------------- */
 
-.lang-switcher-container {
+/* .lang-switcher-container {
   border-top: 1px solid #424245;
   width: 100%;
   padding: 30px 0px;
   max-width: 980px;
   margin: 0px auto;
-}
+} */
 
-@media only screen and (max-width: 1068px) {
+/* @media only screen and (max-width: 1068px) {
   .lang-switcher-container {
     padding: 30px 20px;
   }
@@ -4491,7 +4380,7 @@ select {
     flex-direction: column;
     padding: 20px;
   }
-}
+} */
 .lang-switcher-container .language-switcher-text {
   padding-right: 10px;
 }
