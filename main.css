@@ -1847,11 +1847,6 @@ input[type='checkbox']#active {
 /* [data-v-1b2e9918] .form-dropdown option:not([disabled]) {
   color: rgba(29, 29, 31, 0.9);
 } */
-@media only screen and (max-width: 767px) {
-  .changes-versions[data-v-1b2e9918] {
-    display: none;
-  }
-}
 
 /* -------------------------------- Info Bar -------------------------------- */
 
