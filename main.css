@@ -1768,11 +1768,13 @@ input[type='checkbox']#active {
   width: 1.25em !important;
   height: 1.25em !important;
   margin-top: 0.3em !important;
+  display: block;
 }
 
 .svg-icon {
   width: 1.75em;
   height: 1.75em;
+  display: block;
 }
 
 .ribbon {
@@ -2704,8 +2706,9 @@ input[type='checkbox']#active {
   margin-bottom: 2em;
 }
 
-.padding-right-small {
+.article-image-wrapper {
   padding-right: 1.5em !important;
+  margin-bottom: 1em;
 }
 
 .article-date {
